@@ -12,23 +12,29 @@ import java.util.Map;
  * Value == occurrence
  */
 public class DataOccurrence {
+
     public static void countFrequencies(ArrayList<String> list) throws IOException {
-        // hashmap to store the frequency of element
-        Map<String, Integer> myHashMap = new HashMap<String, Integer>();
+
+        Map<String, Integer> myHashMap = new HashMap<>();
         FileWriter writer = new FileWriter("result.out");
 
 
         for (String i : list) {
+
             Integer j = myHashMap.get(i);
             myHashMap.put(i, (j == null) ? 1 : j + 1);
+
         }
 
-        // displaying the occurrence of elements in the arraylist
         for (Map.Entry<String, Integer> val : myHashMap.entrySet()) {
+
             writer.write(val.getKey() + " : " + val.getValue() + "\n");
             System.out.println(val.getKey() + " : " + val.getValue());
+
         }
+
         writer.close();
+
     }
 
 }
