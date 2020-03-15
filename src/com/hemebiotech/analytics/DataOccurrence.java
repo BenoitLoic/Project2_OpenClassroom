@@ -10,6 +10,7 @@ import java.util.Map;
  * Sort ArrayList into HashMap
  * Key == String
  * Value == occurrence
+ * Write the HashMap in "result.out" and show result in Terminal
  */
 public class DataOccurrence {
 
@@ -25,9 +26,7 @@ public class DataOccurrence {
             myHashMap.put(i, (j == null) ? 1 : j + 1);
 
         }
-/**
- * Write the HashMap in "result.out" and show result in Terminal
- */
+
         for (Map.Entry<String, Integer> val : myHashMap.entrySet()) {
 
             writer.write(val.getKey() + " : " + val.getValue() + "\n");
