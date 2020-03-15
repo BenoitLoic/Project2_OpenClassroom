@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Simple brute force implementation
@@ -22,7 +22,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 
     @Override
-    public List<String> GetSymptoms() {
+    public ArrayList<String> GetSymptoms() {
         //ArrayList dans laquelle on va stocker les symptomes du fichier
         ArrayList<String> result = new ArrayList<>();
 
