@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,10 +13,10 @@ import java.util.Map;
  */
 public class DataOccurrence {
 
-    public static void countFrequencies(ArrayList<String> list) throws IOException {
+    public Map<String, Integer> countFrequencies(ArrayList<String> list) throws IOException {
 
         Map<String, Integer> myHashMap = new HashMap<>();
-        FileWriter writer = new FileWriter("result.out");
+//        FileWriter writer = new FileWriter("result.out");
 
 
         for (String i : list) {
@@ -25,16 +24,16 @@ public class DataOccurrence {
             Integer j = myHashMap.get(i);
             myHashMap.put(i, (j == null) ? 1 : j + 1);
 
-        }
+        } return myHashMap;
 
-        for (Map.Entry<String, Integer> val : myHashMap.entrySet()) {
+//        for (Map.Entry<String, Integer> val : myHashMap.entrySet()) {
+//
+//            writer.write(val.getKey() + " : " + val.getValue() + "\n");
+//            System.out.println(val.getKey() + " : " + val.getValue());
+//
+//        }
 
-            writer.write(val.getKey() + " : " + val.getValue() + "\n");
-            System.out.println(val.getKey() + " : " + val.getValue());
 
-        }
-
-        writer.close();
 
     }
 

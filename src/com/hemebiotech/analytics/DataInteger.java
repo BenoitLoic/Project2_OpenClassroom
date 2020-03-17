@@ -2,8 +2,6 @@ package com.hemebiotech.analytics;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *Main Class
@@ -19,7 +17,7 @@ public class DataInteger {
 
         try {
 
-            DataOccurrence.countFrequencies(myResults.GetSymptoms());
+            DataOccurrence.countFrequencies(myResults.getSymptoms());
 
         } catch (IOException e) {
 
