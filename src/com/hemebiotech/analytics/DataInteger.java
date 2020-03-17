@@ -2,6 +2,9 @@ package com.hemebiotech.analytics;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *Main Class
@@ -11,21 +14,23 @@ public class DataInteger {
     public static void main(String[] args) {
 
         String filepath = "symptoms.txt";
-
+        String outputFilepath = "result.out";
 
         ReadSymptomDataFromFile myResults = new ReadSymptomDataFromFile(filepath);
 
-        try {
+        ArrayList<String> results = myResults.getSymptoms();
 
-            DataOccurrence.countFrequencies(myResults.getSymptoms());
+        CountDataFrequencies frequencies = new CountDataFrequencies();
 
-        } catch (IOException e) {
+        HashMap<String, Integer> frequency =  frequencies.countFrequencies(results);
 
-            e.printStackTrace();
+        DataFileWriter dataWriter  = new DataFileWriter(outputFilepath);
+
+        dataWriter.outputWriter(frequency);
 
         }
     }
-}
+
 
 
 

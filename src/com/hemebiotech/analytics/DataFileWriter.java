@@ -28,10 +28,10 @@ public class DataFileWriter {
             FileWriter writer = new FileWriter(outputFilepath);
 
 
-            for (Map.Entry<String, Integer> maps : map.entrySet())
+            for (Map.Entry<String, Integer> maps : map.entrySet()){
 
                 writer.write(maps.getKey() + " : " + maps.getValue() + "\n");
-
+                System.out.print(maps.getKey() + " : " + maps.getValue() + "\n" );}
         } catch (IOException e) {
             e.printStackTrace();
         }
