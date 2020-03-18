@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class DataFileWriter {
 
-    private final String outputFilepath;
+    private String outputFilepath;
 
     /**
      *
@@ -32,6 +32,8 @@ public class DataFileWriter {
 
                 writer.write(maps.getKey() + " : " + maps.getValue() + "\n");
                 System.out.print(maps.getKey() + " : " + maps.getValue() + "\n" );}
+            writer.flush();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
