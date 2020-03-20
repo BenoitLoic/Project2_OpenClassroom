@@ -39,6 +39,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
                     //affectation de la ligne suivante à line
                     line = reader.readLine();
                 }
+
                 //fermeture du buffer
                 reader.close();
 

@@ -1,9 +1,7 @@
 package com.hemebiotech.analytics;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Sort ArrayList into HashMap
@@ -24,7 +22,7 @@ public class CountDataFrequencies {
 
         for (String i : list) {
 
-            Integer j = myHashMap.get(i);
+            Integer j = myHashMap.get(i); //
             myHashMap.put(i, (j == null) ? 1 : j + 1);
 
         } return myHashMap;

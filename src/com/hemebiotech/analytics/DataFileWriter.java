@@ -6,7 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * une application pour écrire des données dans un fichier.
+ * une application pour écrire les données d'une HashMap dans un fichier.
+ * outputWriter ecrit une combinaison "Key : Value" à chaque ligne et l'affiche.
  *
  */
 
@@ -16,12 +17,14 @@ public class DataFileWriter {
     private String outputFilepath;
 
     /**
-     *
      * @param outputFilepath a full or partial path to File to overwrite result in it,
      */
 
     public DataFileWriter(String outputFilepath){this.outputFilepath = outputFilepath;}
 
+    /**
+     * @param map HashMap <String, Integer>
+     */
     public void outputWriter (HashMap<String,Integer> map) {
         try {
 
