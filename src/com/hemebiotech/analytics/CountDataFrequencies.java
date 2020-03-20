@@ -11,13 +11,10 @@ import java.util.HashMap;
  */
 public class CountDataFrequencies {
 
-    public CountDataFrequencies (){}
 
-
-    public HashMap<String, Integer> countFrequencies(ArrayList<String> list)  {
+    public HashMap<String, Integer> countFrequencies(ArrayList<String> list) {
 
         HashMap<String, Integer> myHashMap = new HashMap<>();
-
 
 
         for (String i : list) {
@@ -25,10 +22,8 @@ public class CountDataFrequencies {
             Integer j = myHashMap.get(i); //
             myHashMap.put(i, (j == null) ? 1 : j + 1);
 
-        } return myHashMap;
-
-
-
+        }
+        return myHashMap;
 
 
     }
