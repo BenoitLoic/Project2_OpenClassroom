@@ -15,21 +15,22 @@ public class SymptomsCounter {
 
         String filepath = "symptoms.txt";
         String outputFilepath = "result.out";
+
 //lecture des symptomes par ReadSymptomDataFromFile et affectation à results
         ReadSymptomDataFromFile myResults = new ReadSymptomDataFromFile(filepath);
         ArrayList<String> results = myResults.getSymptoms();
 
 //cacul l'occurence des differents symptomes par CountDataFrequencies et affectation à frequency
         CountDataFrequencies frequencies = new CountDataFrequencies();
-
         HashMap<String, Integer> unsortedFrequency = frequencies.countFrequencies(results);
+
+//organise les Keys et ordre alphabetique
         TreeMap<String, Integer> frequency = new TreeMap<>(unsortedFrequency);
 
 //écriture des resultats et affichage sur le terminal
         DataFileWriter dataWriter = new DataFileWriter(outputFilepath);
+        dataWriter.outputWriter(frequency);
 
-        dataWriter.outputWriter(unsortedFrequency);
-//dataWriter.outputWriter(frequencies.countFrequencies(myResults.getSymptoms()));
     }
 }
 
