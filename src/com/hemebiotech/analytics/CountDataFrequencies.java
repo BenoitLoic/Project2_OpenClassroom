@@ -17,10 +17,10 @@ public class CountDataFrequencies {
         HashMap<String, Integer> myHashMap = new HashMap<>();
 
 
-        for (String i : list) {
+        for (String symptom : list) {
 
-            Integer j = myHashMap.get(i); //
-            myHashMap.put(i, (j == null) ? 1 : j + 1);
+            Integer frequency = myHashMap.get(symptom); //
+            myHashMap.put(symptom, (frequency == null) ? 1 : frequency + 1);
 
         }
         return myHashMap;
