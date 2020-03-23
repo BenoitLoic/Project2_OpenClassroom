@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * une application pour écrire les données d'une HashMap dans un fichier.
- * outputWriter ecrit une combinaison "Key : Value" à chaque ligne et l'affiche.
+ * outputWriter ecrit une combinaison "Key : Value" à chaque ligne.
  */
 
 
@@ -25,7 +25,7 @@ public class DataFileWriter {
     /**
      * @param map HashMap <String, Integer>
      */
-    public void outputWriter(Map<String, Integer> map) {
+    public void outputWriter(Map<String, Integer> map) throws IOException {
         try (FileWriter writer = new FileWriter(outputFilepath)) {
 
 
@@ -36,6 +36,7 @@ public class DataFileWriter {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 }
