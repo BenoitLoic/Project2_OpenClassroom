@@ -26,9 +26,7 @@ public class DataFileWriter {
      * @param map HashMap <String, Integer>
      */
     public void outputWriter(Map<String, Integer> map) {
-        try {
-
-            FileWriter writer = new FileWriter(outputFilepath);
+        try (FileWriter writer = new FileWriter(outputFilepath)) {
 
 
             for (Map.Entry<String, Integer> maps : map.entrySet()) {
@@ -36,8 +34,6 @@ public class DataFileWriter {
                 writer.write(maps.getKey() + " : " + maps.getValue() + "\n");
                 System.out.print(maps.getKey() + " : " + maps.getValue() + "\n");
             }
-            writer.flush();
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

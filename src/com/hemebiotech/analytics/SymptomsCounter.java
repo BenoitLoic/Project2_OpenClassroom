@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.TreeMap;
 
 
@@ -21,8 +21,8 @@ public class SymptomsCounter {
         ArrayList<String> results = myResults.getSymptoms();
 
 //cacul l'occurence des differents symptomes par CountDataFrequencies et affectation à frequency
-        CountDataFrequencies frequencies = new CountDataFrequencies();
-        HashMap<String, Integer> unsortedFrequency = frequencies.countFrequencies(results);
+        CountFrequencies frequencies = new CountDataFrequencies();
+        Map<String, Integer> unsortedFrequency = frequencies.countFrequencies(results);
 
 //organise les Keys et ordre alphabetique
         TreeMap<String, Integer> frequency = new TreeMap<>(unsortedFrequency);
