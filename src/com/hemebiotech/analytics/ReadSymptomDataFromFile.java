@@ -4,10 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * Simple brute force implementation
+ * Contain method to read Symptoms from file and add it to a List of String
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
@@ -20,27 +21,26 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
         this.filepath = filepath;
     }
 
+    /**
+     * @return a raw List of symptoms, duplicates are possible
+     */
 
     @Override
-    public ArrayList<String> getSymptoms() {
-        //ArrayList dans laquelle on va stocker les symptomes du fichier
-        ArrayList<String> result = new ArrayList<>();
+    public List<String> getSymptoms() {
+
+        List<String> result = new ArrayList<>();
 
         if (filepath != null) {
 
             try {
                 BufferedReader reader = new BufferedReader(new FileReader(filepath));
-                //lecture du fichier et affectation de la premiere ligne à la variable line
-                String line = reader.readLine().toLowerCase();
+                String line = reader.readLine();
 
                 while (line != null) {
-                    //ajout de line a arraylist
                     result.add(line);
-                    //affectation de la ligne suivante à line
                     line = reader.readLine();
                 }
 
-                //fermeture du buffer
                 reader.close();
 
             } catch (IOException e) {

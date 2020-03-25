@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * une application pour écrire les données d'une HashMap dans un fichier.
- * outputWriter ecrit une combinaison "Key : Value" à chaque ligne.
+ * Contains method to write data from a Map to a file.
  */
 
 
@@ -15,7 +14,7 @@ public class DataFileWriter {
     private String outputFilepath;
 
     /**
-     * @param outputFilepath a full or partial path to File to overwrite result in it,
+     * @param outputFilepath a full or partial path to File to write result in it,
      */
 
     public DataFileWriter(String outputFilepath) {
@@ -23,20 +22,18 @@ public class DataFileWriter {
     }
 
     /**
-     * @param map HashMap <String, Integer>
+     * @param map Map <String, Integer> that will be written in output file
+     * @throws IOException for FileWriter
      */
     public void outputWriter(Map<String, Integer> map) throws IOException {
         try (FileWriter writer = new FileWriter(outputFilepath)) {
 
 
-            for (Map.Entry<String, Integer> maps : map.entrySet()) {
+            for (Map.Entry<String, Integer> entry : map.entrySet()) {
 
-                writer.write(maps.getKey() + " : " + maps.getValue() + "\n");
-                System.out.print(maps.getKey() + " : " + maps.getValue() + "\n");
+                writer.write(entry.getKey() + " : " + entry.getValue() + "\n");
+
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw e;
         }
     }
 }

@@ -2,13 +2,13 @@ package com.hemebiotech.analytics;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 
 /**
- * Lecture des informations ligne par ligne de filepath pour en dénombrer les symptomes et les ecrire dans outputFilepath.
+ * Read symptoms from a file, calculate their frequency, sort them by alphabetical order and write it to another file.
  */
 public class SymptomsCounter {
 
@@ -17,18 +17,18 @@ public class SymptomsCounter {
         String filepath = "symptoms.txt";
         String outputFilepath = "result.out";
 
-//lecture des symptomes par ReadSymptomDataFromFile et affectation à results
+//Read symptoms from file and put it in a List
         ReadSymptomDataFromFile myResults = new ReadSymptomDataFromFile(filepath);
-        ArrayList<String> results = myResults.getSymptoms();
+        List<String> results = myResults.getSymptoms();
 
-//cacul l'occurence des differents symptomes par CountDataFrequencies et affectation à frequency
-        CountFrequencies frequencies = new CountDataFrequencies();
+//Calculate frequency of symptoms from the List and put them in a map
+        CountFrequencies frequencies = new CountFrequencies();
         Map<String, Integer> unsortedFrequency = frequencies.countFrequencies(results);
 
-//organise les Keys et ordre alphabetique
+//Sort symptoms by alphabetic order
         TreeMap<String, Integer> frequency = new TreeMap<>(unsortedFrequency);
 
-//écriture des resultats et affichage sur le terminal
+//Write ts symptoms and their frequency to a file
         DataFileWriter dataWriter = new DataFileWriter(outputFilepath);
         dataWriter.outputWriter(frequency);
 
