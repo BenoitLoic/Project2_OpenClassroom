@@ -11,8 +11,10 @@ import java.util.Map;
 public class CountFrequencies {
 
     /**
-     * @param list List<String> where frequency will be calculated
-     * @return Map<String, Integer> is the result of frequency calculation with key = symptoms and value = symptoms occurrence
+     * this method will count the occurrence of each symptoms from the input list
+     *
+     * @param list List of Strings where frequency will be calculated
+     * @return a Map of Strings, Integers. It's the result of frequency calculation with key = symptoms and value = symptoms occurrence
      */
     public Map<String, Integer> countFrequencies(List<String> list) {
 

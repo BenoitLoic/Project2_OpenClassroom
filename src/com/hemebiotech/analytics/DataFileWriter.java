@@ -22,10 +22,12 @@ public class DataFileWriter {
     }
 
     /**
-     * @param map Map <String, Integer> that will be written in output file
+     * this method will write input map into a file
+     *
+     * @param map Map  of String, Integer that will be written in output file
      * @throws IOException for FileWriter
      */
-    public void outputWriter(Map<String, Integer> map) throws IOException {
+    public void symptomsWriter(Map<String, Integer> map) throws IOException {
         try (FileWriter writer = new FileWriter(outputFilepath)) {
 
 

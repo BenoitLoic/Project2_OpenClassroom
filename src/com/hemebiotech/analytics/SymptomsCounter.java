@@ -30,7 +30,7 @@ public class SymptomsCounter {
 
 //Write ts symptoms and their frequency to a file
         DataFileWriter dataWriter = new DataFileWriter(outputFilepath);
-        dataWriter.outputWriter(frequency);
+        dataWriter.symptomsWriter(frequency);
 
     }
 }

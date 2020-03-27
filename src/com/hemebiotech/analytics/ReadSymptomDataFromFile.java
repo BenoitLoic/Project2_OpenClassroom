@@ -22,18 +22,20 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
     }
 
     /**
+     * this method will read the input file and add it to a list.
+     *
      * @return a raw List of symptoms, duplicates are possible
+     * @throws IOException for Reader
      */
 
     @Override
-    public List<String> getSymptoms() {
+    public List<String> getSymptoms() throws IOException {
 
         List<String> result = new ArrayList<>();
 
         if (filepath != null) {
 
-            try {
-                BufferedReader reader = new BufferedReader(new FileReader(filepath));
+            try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
                 String line = reader.readLine();
 
                 while (line != null) {
@@ -41,11 +43,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
                     line = reader.readLine();
                 }
 
-                reader.close();
-
-            } catch (IOException e) {
-
-                e.printStackTrace();
 
             }
         }
