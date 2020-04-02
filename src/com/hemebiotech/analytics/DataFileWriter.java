@@ -23,7 +23,6 @@ public class DataFileWriter {
 
     /**
      * this method will write input map into a file
-     *
      * @param map Map  of String, Integer that will be written in output file
      * @throws IOException for FileWriter
      */

@@ -12,7 +12,6 @@ public class CountFrequencies {
 
     /**
      * this method will count the occurrence of each symptoms from the input list
-     *
      * @param list List of Strings where frequency will be calculated
      * @return a Map of Strings, Integers. It's the result of frequency calculation with key = symptoms and value = symptoms occurrence
      */
